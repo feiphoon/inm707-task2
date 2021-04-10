@@ -1,12 +1,6 @@
-# INM707-joint-coursework
+# INM707-task2
 
-## Good repo hygiene tips
 
-- Don't push without a branch
-- Don't merge without a quick review from the other person
-- Write informative and succinct commit messages - so we can find stuff and follow logic!
-- Many small logical, _passing/working_ commits are better than huge ones - use Github Desktop to stage individual lines
-- Use `black` and `flake8` via `inv lint` to tidy up code - keep the reformatting commits separate from the actual code change ones :)
 
 ## Setup
 
@@ -42,7 +36,18 @@ pip list # Optional: check what was installed in `venv`
 deactivate
 ```
 
-## Code formatting
+
+## Contributing and development guidelines
+
+### Good repo hygiene tips
+
+- Don't push without a branch
+- Don't merge without a quick review from the other person
+- Write informative and succinct commit messages - so we can find stuff and follow logic!
+- Many small logical, _passing/working_ commits are better than huge ones - use Github Desktop to stage individual lines
+- Use `black` and `flake8` via `inv lint` to tidy up code - keep the reformatting commits separate from the actual code change ones :)
+
+### Code formatting
 
 Just run this:
 
@@ -52,7 +57,7 @@ inv lint
 
 The packages run by this are as follows (if you want to run them individually).
 
-### `black`
+#### `black`
 
 Aggressive PEP 8 code reformatter.
 
@@ -61,7 +66,7 @@ https://pypi.org/project/black/
 black . # In the folder you're in, or a particular file you want to format
 ```
 
-### `flake8`
+#### `flake8`
 
 Reports PEP 8 violations.
 
@@ -70,7 +75,7 @@ https://pypi.org/project/flake8/
 flake8 . # In the folder you're in, or a particular file you want to report on
 ```
 
-## Running tests
+### Running tests
 
 Run all types of tests
 ```
@@ -78,14 +83,14 @@ inv test
 ```
 More details follow.
 
-### `doctest`
+#### `doctest`
 
 Run `doctest` on the docstring tests in `maze.py`.
 ```
 python -m doctest maze.py -v
 ```
 
-### `pytest`
+#### `pytest`
 
 Run all `pytest` tests:
 ```
@@ -126,9 +131,30 @@ pytest -v --setup-show tests/test_maze.py
 ```
 
 
-### `pytest` AND `doctest`:
+#### `pytest` AND `doctest`:
 
 Run both together! The `-v` or verbosity option is not required, but makes it a lot more satisfying.
 ```
 pytest -v --doctest-modules
+```
+
+### Recommended VSCode settings
+
+On your machine, create a `.vscode` folder in the root of this repo and create a `settings.json` inside it.
+
+Save the following into it:
+```json
+{
+    "python.terminal.activateEnvironment": true,
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Args": [
+        "--config",
+        ".flake8"
+    ],
+    "python.formatting.provider": "black",
+    "editor.formatOnSave": true,
+    "python.pythonPath": "<path to your venv!>venv/bin/python3"
+}
 ```
