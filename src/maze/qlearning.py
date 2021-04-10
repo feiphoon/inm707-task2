@@ -1,6 +1,6 @@
 """
 Based on MC Control code in INM707 Lab4 by Dr Michael Garcia Ortiz:
-- using Q Values for Qlearning
+- using Q-values for Q-learning
 """
 import numpy as np
 
@@ -59,7 +59,7 @@ class QLearning:
         #     next_reward + self.gamma * np.max(self.q_value_store[next_state])
         # )
         # Q[state, action] = Q[state, action] + lr * (reward + gamma * np.max(Q[new_state, :]) — Q[state, action])
-
+        # The below is clearer.
         self.q_value_store[current_state, next_action] += self.alpha * (
             next_reward
             + self.gamma * np.max(self.q_value_store[next_state])

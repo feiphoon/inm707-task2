@@ -32,10 +32,10 @@ class EGreedyPolicy:
         return decay
 
     def __call__(self, state: int, q_value_store: np.ndarray) -> Action:
-
         # Create a factor of randomness -
         # draw a number [0.0, 1.0) from a uniform distribution
         # against a specified epsilon.
+        # Create the (1 - epsilon) setup.
         is_greedy = np.random.uniform() > self.epsilon
 
         # If greedy true, pick the largest q_value for the state
