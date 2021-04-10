@@ -6,7 +6,7 @@ Based on MC Control code in INM707 Lab4 by Dr Michael Garcia Ortiz:
 import numpy as np
 
 from q_maze import QMaze, Action
-from fei_e_greedy_policy import EGreedyPolicy
+from e_greedy_policy import EGreedyPolicy
 
 
 class Sarsa:
