@@ -2,10 +2,6 @@
 Structure based on INM707 Lab1 code by Dr Michael Garcia Ortiz, with Maze algorithm help from
 https://medium.com/swlh/fun-with-python-1-maze-generator-931639b4fb7e,
 but the latter had quite a few bugs and had to be rewritten.
-
-TODO: Add some additional logic so that if an action is chosen
-that brings the agent out of bounds to the Maze, it is
-blocked or prevented from doing so.
 """
 import operator
 from enum import Enum, IntEnum, unique
@@ -13,23 +9,6 @@ from random import randint, choice, sample
 import numpy as np
 from typing import List, Tuple
 from collections import namedtuple
-
-# from datetime import datetime
-# import logging
-# TODO: some syspath stuff to fix logging
-
-# dt_now = datetime.now()
-# dt_str = dt_now.strftime("%Y%m%d-%H%M%S")
-# LOG_PATH = f"logs/{dt_str}.log"
-
-# with open(LOG_PATH, "w") as f:
-#     f.write(dt_now.strftime("%c"))
-
-# logging.basicConfig(filename=LOG_PATH, filemode="a", level=logging.DEBUG)
-# logger = logging.getLogger()
-
-# logger.addHandler(logging.FileHandler(LOG_PATH, "a"))
-# print = logger.debug
 
 Observation = namedtuple("Observation", ["dist_to_exit", "neighbours"])
 
@@ -695,7 +674,7 @@ class Maze:
         return observation, reward, self.done
 
 
-# m = Maze(10, has_treasure=True)
+# m = Maze(400, has_treasure=False)
 # m.display(debug=True)
 # m.reset()
 # m.step(Action.UP)
