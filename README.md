@@ -1,6 +1,8 @@
 # INM707-task2
 
+This is the individual submission part of the INM707 coursework.
 
+Documentation on the environment is found [here](MAZE.md) in a separate markdown doc.
 
 ## Setup
 
