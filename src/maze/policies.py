@@ -12,8 +12,7 @@ def random_policy(observation):
 def basic_policy(observation):
     coord = observation.dist_to_exit
 
-    # take care about the link between numpy index and directions.
-
+    # Take care about the link between numpy index and directions.
     coord_x = coord[1]
     coord_y = -coord[0]
 
