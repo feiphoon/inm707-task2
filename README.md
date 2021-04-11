@@ -1,5 +1,7 @@
 # INM707-task2
 
+This repo is at <https://github.com/feiphoon/inm707-task2>.
+
 This is the individual submission part of the INM707 coursework.
 
 See my [file tree documentation](TREE.md) for a quick repo overview.
