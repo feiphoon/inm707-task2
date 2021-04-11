@@ -152,7 +152,7 @@ def train_on_qlearning(
     PLOT_FILE_NAME = FILE_NAME
 
     # Save rendered maze
-    with open(os.path.join(output_path, "maze_layout.txt"), "w") as f:
+    with open(os.path.join(output_path, FILE_NAME + "_maze_layout.txt"), "w") as f:
         with redirect_stdout(f):
             qm.display(debug=True)
 
