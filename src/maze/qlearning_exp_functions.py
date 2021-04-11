@@ -8,6 +8,10 @@ from typing import NamedTuple, Tuple
 
 class Results(NamedTuple):
     env_size: int
+    epsilon: float
+    decay: float
+    gamma: float
+    alpha: float
     all_rewards: float
     max_reward: int
     mean_reward: float
@@ -50,6 +54,7 @@ def run_ql_experiments(
     policy: EGreedyPolicy,
     q_learning_method: QLearning,
     num_episodes: int,
+    hyperparameter_dict: dict,
 ) -> Results:
     all_rewards: list = []
     all_turns_elapsed: list = []
@@ -66,7 +71,6 @@ def run_ql_experiments(
         all_turns_elapsed.append(final_turns_elapsed)
         all_ending_epsilon.append(final_epsilon)
 
-    env_size = environment.size
     max_reward = max(all_rewards)
     mean_reward = np.mean(all_rewards)
     var_reward = np.std(all_rewards)
@@ -79,14 +83,18 @@ def run_ql_experiments(
     # policy.reset()
 
     return Results(
-        env_size,
-        all_rewards,
-        max_reward,
-        mean_reward,
-        var_reward,
-        all_turns_elapsed,
-        max_turns_elapsed,
-        mean_turns_elapsed,
-        var_turns_elapsed,
-        mean_ending_epsilon,
+        env_size=hyperparameter_dict["env_size"],
+        epsilon=hyperparameter_dict["epsilon"],
+        decay=hyperparameter_dict["decay"],
+        gamma=hyperparameter_dict["gamma"],
+        alpha=hyperparameter_dict["alpha"],
+        all_rewards=all_rewards,
+        max_reward=max_reward,
+        mean_reward=mean_reward,
+        var_reward=var_reward,
+        all_turns_elapsed=all_turns_elapsed,
+        max_turns_elapsed=max_turns_elapsed,
+        mean_turns_elapsed=mean_turns_elapsed,
+        var_turns_elapsed=var_turns_elapsed,
+        mean_ending_epsilon=mean_ending_epsilon,
     )
