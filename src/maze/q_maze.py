@@ -1,10 +1,7 @@
 """
 Version of the Maze for Q-Learning.
 (Keeping the basic Maze clean for now).
-Based on Lab 3 code, but hoping to make some changes later.
-"""
-"""
-Structured using code from INM707 Lab3 by Dr Michael Garcia Ortiz.
+Based on INM707 Lab3 by Dr Michael Garcia Ortiz.
 """
 import numpy as np  # noqa E402
 from typing import Tuple  # noqa E402
@@ -67,9 +64,6 @@ class QMaze(Maze):
 
                 # E.g. action_to_take --> step(Action.DIRECTION)
                 _, _additional_reward, done = super().step(action_to_take)
-
-                # TODO: not sure if I needed to repeat this here, probably not.
-                state = self._get_agent_state()
 
                 # Don't penalize for second step, and don't increment timesteps.
                 # The following offsets the usual action of reward -=1 for timestep taken.
