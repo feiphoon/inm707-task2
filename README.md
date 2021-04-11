@@ -1,8 +1,23 @@
 # INM707-task2
 
+This repo is at <https://github.com/feiphoon/inm707-task2>.
+
 This is the individual submission part of the INM707 coursework.
 
-Documentation on the environment is found [here](MAZE.md) in a separate markdown doc.
+See my [file tree documentation](TREE.md) for a quick repo overview.
+
+Relevant files are in the `src/maze` folder [here](src/maze):
+- `maze.py` - Maze environment base class
+- `q_maze.py` - QMaze environment modified for Q-value lookup
+- `e_greedy_policy.py` - EGreedyPolicy class
+- `qlearning.py` - QLearning class
+- `qlearning_analysis.ipynb` - Analysis notebook
+- `qlearning_exp_functions.py` - Exciting experiment notebook
+- `qlearning_exp_runner.ipynb` - All training functions
+
+
+Some documentation for the classes is found [here](src/maze/README.md) in a separate markdown doc.
+
 
 ## Setup
 
