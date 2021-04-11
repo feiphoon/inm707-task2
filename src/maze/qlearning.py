@@ -1,6 +1,6 @@
 """
-Based on MC Control code in INM707 Lab4 by Dr Michael Garcia Ortiz:
-- using Q-values for Q-learning
+Slightly based on control code in INM707 Lab4 by Dr Michael Garcia Ortiz
+- this has come a long way. Using Q-values for Q-learning.
 """
 import numpy as np
 
